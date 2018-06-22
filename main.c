@@ -28,14 +28,13 @@
 #include "iodefine.h"
 
 /* Kernel includes. */
-#include "FreeRTOS/FreeRTOS.h"
-#include "FreeRTOS/task.h"
+#include "FreeRTOS.h"
+#include "task.h"
 
 /* Prototype */
 void main(void);
 void vTask1(void *pvParameters);
 void vTask2(void *pvParameters);
-void vApplicationSetupTimerInterrupt(void);
 
 
 void main(void)
@@ -44,7 +43,7 @@ void main(void)
 	xTaskCreate(vTask1,"Task1",100,NULL,1,NULL);
 	xTaskCreate(vTask2,"Task2",100,NULL,1,NULL);
 	
-	/* タスクスケジューラ起動*/
+	/* OS起動*/
 	vTaskStartScheduler();
 
 	/*ここには戻ってこないはず*/
@@ -55,6 +54,8 @@ void main(void)
 /***タスク定義*******************************************************************/
 void vTask1(void *pvParameters)
 {
+	PORTD.PDR.BIT.B6 = 1;
+	PORTD.DSCR.BIT.B6 = 1;
 	while(1) {
 		/*CPUボード上のLED0を1Hzで点滅*/
 		PORTD.PODR.BIT.B6 = ~PORTD.PODR.BIT.B6;
@@ -64,6 +65,8 @@ void vTask1(void *pvParameters)
 
 void vTask2(void *pvParameters)
 {
+	PORTD.PDR.BIT.B7 = 1;
+	PORTD.DSCR.BIT.B7 = 1;
 	while(1) {
 		/*CPUボード上のLED1を5Hzで点滅*/
 		PORTD.PODR.BIT.B7 = ~PORTD.PODR.BIT.B7;

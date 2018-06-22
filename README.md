@@ -1,0 +1,1 @@
+# MySettings_FreeRTOSv10_0_1_for_RX65N_with_CC-RX

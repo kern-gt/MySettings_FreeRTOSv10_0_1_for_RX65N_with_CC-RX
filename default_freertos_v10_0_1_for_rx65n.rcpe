@@ -14,13 +14,17 @@
           <Path>FreeRTOS\portable\port_asm.src</Path>
           <Path>FreeRTOS\portable\portmacro.h</Path>
         </Category>
+        <Category Name="user_cofig">
+          <Path>FreeRTOS\user_config\ApplicationHook.c</Path>
+          <Path>FreeRTOS\user_config\KernelTimer.c</Path>
+          <Path>FreeRTOS\user_config\FreeRTOSConfig.h</Path>
+        </Category>
         <Path>FreeRTOS\croutine.c</Path>
         <Path>FreeRTOS\croutine.h</Path>
         <Path>FreeRTOS\deprecated_definitions.h</Path>
         <Path>FreeRTOS\event_groups.c</Path>
         <Path>FreeRTOS\event_groups.h</Path>
         <Path>FreeRTOS\FreeRTOS.h</Path>
-        <Path>FreeRTOS\FreeRTOSConfig.h</Path>
         <Path>FreeRTOS\list.c</Path>
         <Path>FreeRTOS\list.h</Path>
         <Path>FreeRTOS\message_buffer.h</Path>
@@ -126,9 +130,8 @@
           <Path>src\smc_gen\r_pincfg\Pin.h</Path>
         </Category>
       </Category>
-      <Path>ApplicationHook.c</Path>
-      <Path>KernelTimer.c</Path>
       <Path>main.c</Path>
+      <Path>userdefine.h</Path>
     </Files>
     <Device Series="RX">R5F565NEDxFP</Device>
     <BuildOptions Name="CC-RX" Version="V2.08.00">
@@ -140,6 +143,8 @@
           <Option>-isa=rxv2</Option>
           <Option>-fpu</Option>
           <Option>-lang=c99</Option>
+          <Option>-include=FreeRTOS\user_config</Option>
+          <Option>-include=.</Option>
           <Option>-include=src\smc_gen\r_pincfg</Option>
           <Option>-include=src\smc_gen\r_config</Option>
           <Option>-include=src\smc_gen\r_bsp\mcu\rx65n\register_access</Option>
@@ -201,7 +206,6 @@
           <Path>DefaultBuild\stream_buffer.obj</Path>
           <Path>DefaultBuild\tasks.obj</Path>
           <Path>DefaultBuild\timers.obj</Path>
-          <Path>DefaultBuild\ApplicationHook.obj</Path>
           <Path>DefaultBuild\main.obj</Path>
           <Path>DefaultBuild\Config_PORT.obj</Path>
           <Path>DefaultBuild\Config_PORT_user.obj</Path>
@@ -226,9 +230,12 @@
           <Path>DefaultBuild\mcu_mapped_interrupts.obj</Path>
           <Path>DefaultBuild\mcu_startup.obj</Path>
           <Path>DefaultBuild\Pin.obj</Path>
+          <Path>DefaultBuild\ApplicationHook.obj</Path>
           <Path>DefaultBuild\KernelTimer.obj</Path>
         </LinkOrder>
         <CommonOptions>
+          <IncludePathForC>FreeRTOS\user_config</IncludePathForC>
+          <IncludePathForC>.</IncludePathForC>
           <IncludePathForC>src\smc_gen\r_pincfg</IncludePathForC>
           <IncludePathForC>src\smc_gen\r_config</IncludePathForC>
           <IncludePathForC>src\smc_gen\r_bsp\mcu\rx65n\register_access</IncludePathForC>

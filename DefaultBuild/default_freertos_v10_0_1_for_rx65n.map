@@ -1,4 +1,4 @@
-Renesas Optimizing Linker (W2.08.00 )             22-Jun-2018 17:36:20
+Renesas Optimizing Linker (W2.08.00 )             13-Jul-2018 20:49:06
 
 *** Options ***
 
@@ -14,7 +14,6 @@ Renesas Optimizing Linker (W2.08.00 )             22-Jun-2018 17:36:20
 -input=DefaultBuild\stream_buffer.obj
 -input=DefaultBuild\tasks.obj
 -input=DefaultBuild\timers.obj
--input=DefaultBuild\ApplicationHook.obj
 -input=DefaultBuild\main.obj
 -input=DefaultBuild\Config_PORT.obj
 -input=DefaultBuild\Config_PORT_user.obj
@@ -39,6 +38,7 @@ Renesas Optimizing Linker (W2.08.00 )             22-Jun-2018 17:36:20
 -input=DefaultBuild\mcu_mapped_interrupts.obj
 -input=DefaultBuild\mcu_startup.obj
 -input=DefaultBuild\Pin.obj
+-input=DefaultBuild\ApplicationHook.obj
 -input=DefaultBuild\KernelTimer.obj
 -noprelink
 -output=DefaultBuild\default_freertos_v10_0_1_for_rx65n.abs
@@ -114,7 +114,7 @@ W_2
 L
                                   ffe00650  ffe006bf        70   4
 P
-                                  ffe006c0  ffe06a9d      63de   1
+                                  ffe006c0  ffe06ac1      6402   1
 EXCEPTVECT
                                   ffffff80  fffffffb        7c   4
 RESETVECT
@@ -124,7 +124,7 @@ RESETVECT
 
 RAMDATA SECTION:  0000d0ec Byte(s)
 ROMDATA SECTION:  00000772 Byte(s)
-PROGRAM SECTION:  000063de Byte(s)
+PROGRAM SECTION:  00006402 Byte(s)
 
 *** Variable Vector Table List ***
 

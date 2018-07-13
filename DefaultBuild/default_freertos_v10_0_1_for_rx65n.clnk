@@ -9,7 +9,6 @@
 -input=DefaultBuild\stream_buffer.obj
 -input=DefaultBuild\tasks.obj
 -input=DefaultBuild\timers.obj
--input=DefaultBuild\ApplicationHook.obj
 -input=DefaultBuild\main.obj
 -input=DefaultBuild\Config_PORT.obj
 -input=DefaultBuild\Config_PORT_user.obj
@@ -34,6 +33,7 @@
 -input=DefaultBuild\mcu_mapped_interrupts.obj
 -input=DefaultBuild\mcu_startup.obj
 -input=DefaultBuild\Pin.obj
+-input=DefaultBuild\ApplicationHook.obj
 -input=DefaultBuild\KernelTimer.obj
 -noprelink
 -output=DefaultBuild\default_freertos_v10_0_1_for_rx65n.abs

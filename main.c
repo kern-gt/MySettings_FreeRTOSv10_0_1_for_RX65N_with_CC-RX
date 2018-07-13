@@ -30,6 +30,10 @@
 /* Kernel includes. */
 #include "FreeRTOS.h"
 #include "task.h"
+#include "queue.h"
+#include "semphr.h"
+#include "stream_buffer.h"
+#include "timers.h"
 
 /* Prototype */
 void main(void);

@@ -1,49 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <MicomToolCommonProjectFile Version="1.00">
-  <CreatorType Name="CubeSuite+" Version="V6.01.00  [01 Dec 2017]" />
+  <CreatorType Name="CubeSuite+" Version="V7.00.00  [13 Jun 2018]" />
   <Placeholders>
     <PlaceholderPrefix>%</PlaceholderPrefix>
     <PlaceholderPostfix>%</PlaceholderPostfix>
   </Placeholders>
   <Project Name="default_freertos_v10_0_1_for_rx65n" Type="Application">
     <Files>
-      <Category Name="FreeRTOS_Ver10.0.1">
-        <Category Name="portable">
-          <Path>FreeRTOS\portable\heap_1.c</Path>
-          <Path>FreeRTOS\portable\port.c</Path>
-          <Path>FreeRTOS\portable\port_asm.src</Path>
-          <Path>FreeRTOS\portable\portmacro.h</Path>
-        </Category>
-        <Category Name="user_cofig">
-          <Path>FreeRTOS\user_config\ApplicationHook.c</Path>
-          <Path>FreeRTOS\user_config\KernelTimer.c</Path>
-          <Path>FreeRTOS\user_config\FreeRTOSConfig.h</Path>
-        </Category>
-        <Path>FreeRTOS\croutine.c</Path>
-        <Path>FreeRTOS\croutine.h</Path>
-        <Path>FreeRTOS\deprecated_definitions.h</Path>
-        <Path>FreeRTOS\event_groups.c</Path>
-        <Path>FreeRTOS\event_groups.h</Path>
-        <Path>FreeRTOS\FreeRTOS.h</Path>
-        <Path>FreeRTOS\list.c</Path>
-        <Path>FreeRTOS\list.h</Path>
-        <Path>FreeRTOS\message_buffer.h</Path>
-        <Path>FreeRTOS\mpu_prototypes.h</Path>
-        <Path>FreeRTOS\mpu_wrappers.h</Path>
-        <Path>FreeRTOS\portable.h</Path>
-        <Path>FreeRTOS\projdefs.h</Path>
-        <Path>FreeRTOS\queue.c</Path>
-        <Path>FreeRTOS\queue.h</Path>
-        <Path>FreeRTOS\semphr.h</Path>
-        <Path>FreeRTOS\stack_macros.h</Path>
-        <Path>FreeRTOS\StackMacros.h</Path>
-        <Path>FreeRTOS\stream_buffer.c</Path>
-        <Path>FreeRTOS\stream_buffer.h</Path>
-        <Path>FreeRTOS\task.h</Path>
-        <Path>FreeRTOS\tasks.c</Path>
-        <Path>FreeRTOS\timers.c</Path>
-        <Path>FreeRTOS\timers.h</Path>
-      </Category>
       <Category Name="Smart Configurator">
         <Category Name="Config_PORT">
           <Path>src\smc_gen\Config_PORT\Config_PORT.c</Path>
@@ -130,9 +93,52 @@
           <Path>src\smc_gen\r_pincfg\Pin.h</Path>
         </Category>
       </Category>
+      <Category Name="FreeRTOS">
+        <Category Name="portable">
+          <Path>FreeRTOS\portable\heap_1.c</Path>
+          <Path>FreeRTOS\portable\port.c</Path>
+          <Path>FreeRTOS\portable\port_asm.src</Path>
+          <Path>FreeRTOS\portable\portmacro.h</Path>
+        </Category>
+        <Category Name="user_config">
+          <Path>FreeRTOS\user_config\ApplicationHook.c</Path>
+          <Path>FreeRTOS\user_config\FreeRTOSConfig.h</Path>
+          <Path>FreeRTOS\user_config\KernelTimer.c</Path>
+        </Category>
+        <Path>FreeRTOS\croutine.c</Path>
+        <Path>FreeRTOS\croutine.h</Path>
+        <Path>FreeRTOS\deprecated_definitions.h</Path>
+        <Path>FreeRTOS\event_groups.c</Path>
+        <Path>FreeRTOS\event_groups.h</Path>
+        <Path>FreeRTOS\FreeRTOS.h</Path>
+        <Path>FreeRTOS\list.c</Path>
+        <Path>FreeRTOS\list.h</Path>
+        <Path>FreeRTOS\message_buffer.h</Path>
+        <Path>FreeRTOS\mpu_prototypes.h</Path>
+        <Path>FreeRTOS\mpu_wrappers.h</Path>
+        <Path>FreeRTOS\portable.h</Path>
+        <Path>FreeRTOS\projdefs.h</Path>
+        <Path>FreeRTOS\queue.c</Path>
+        <Path>FreeRTOS\queue.h</Path>
+        <Path>FreeRTOS\semphr.h</Path>
+        <Path>FreeRTOS\stack_macros.h</Path>
+        <Path>FreeRTOS\StackMacros.h</Path>
+        <Path>FreeRTOS\stream_buffer.c</Path>
+        <Path>FreeRTOS\stream_buffer.h</Path>
+        <Path>FreeRTOS\task.h</Path>
+        <Path>FreeRTOS\tasks.c</Path>
+        <Path>FreeRTOS\timers.c</Path>
+        <Path>FreeRTOS\timers.h</Path>
+      </Category>
       <Path>main.c</Path>
       <Path>userdefine.h</Path>
     </Files>
+    <DebugOptions>
+      <ConnectSettings>
+        <MainClock>214748364000</MainClock>
+      </ConnectSettings>
+      <DebugToolSettings />
+    </DebugOptions>
     <Device Series="RX">R5F565NEDxFP</Device>
     <BuildOptions Name="CC-RX" Version="V2.08.00">
       <BuildMode Name="DefaultBuild" Active="True">
@@ -175,9 +181,11 @@
           <Option>-output=%BuildModeName%\%ProjectName%.abs</Option>
           <Option>-vect=_undefined_interrupt_source_isr</Option>
           <Option>-list=%BuildModeName%\%ProjectName%.map</Option>
-          <Option>-show=total_size,vector</Option>
+          <Option>-show=symbol,total_size,vector</Option>
           <Option>-nooptimize</Option>
           <Option>-start=SU,SI,B_1,R_1,B_2,R_2,B,R/4,C_1,C_2,C,C$*,D*,W*,L,P*/FFE00000,EXCEPTVECT/FFFFFF80,RESETVECT/FFFFFFFC</Option>
+          <Option>-rom=D=R,D_1=R_1,D_2=R_2</Option>
+          <Option>-total_size</Option>
           <Option>-nologo</Option>
           <Option>-end</Option>
           <Option>-input=%BuildModeName%\%ProjectName%.abs</Option>
@@ -196,16 +204,6 @@
           <GenerateMode>BuildOptionChanged</GenerateMode>
         </LibraryGenerateOptions>
         <LinkOrder>
-          <Path>DefaultBuild\heap_1.obj</Path>
-          <Path>DefaultBuild\port.obj</Path>
-          <Path>DefaultBuild\port_asm.obj</Path>
-          <Path>DefaultBuild\croutine.obj</Path>
-          <Path>DefaultBuild\event_groups.obj</Path>
-          <Path>DefaultBuild\list.obj</Path>
-          <Path>DefaultBuild\queue.obj</Path>
-          <Path>DefaultBuild\stream_buffer.obj</Path>
-          <Path>DefaultBuild\tasks.obj</Path>
-          <Path>DefaultBuild\timers.obj</Path>
           <Path>DefaultBuild\main.obj</Path>
           <Path>DefaultBuild\Config_PORT.obj</Path>
           <Path>DefaultBuild\Config_PORT_user.obj</Path>
@@ -230,6 +228,16 @@
           <Path>DefaultBuild\mcu_mapped_interrupts.obj</Path>
           <Path>DefaultBuild\mcu_startup.obj</Path>
           <Path>DefaultBuild\Pin.obj</Path>
+          <Path>DefaultBuild\heap_1.obj</Path>
+          <Path>DefaultBuild\port.obj</Path>
+          <Path>DefaultBuild\port_asm.obj</Path>
+          <Path>DefaultBuild\croutine.obj</Path>
+          <Path>DefaultBuild\event_groups.obj</Path>
+          <Path>DefaultBuild\list.obj</Path>
+          <Path>DefaultBuild\queue.obj</Path>
+          <Path>DefaultBuild\stream_buffer.obj</Path>
+          <Path>DefaultBuild\tasks.obj</Path>
+          <Path>DefaultBuild\timers.obj</Path>
           <Path>DefaultBuild\ApplicationHook.obj</Path>
           <Path>DefaultBuild\KernelTimer.obj</Path>
         </LinkOrder>

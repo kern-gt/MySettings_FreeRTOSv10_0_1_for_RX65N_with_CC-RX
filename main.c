@@ -7,7 +7,7 @@
 	文字エンコード：UTF-8
 
 	FreeRTOS:v10.0.1　(RX600 RXv2)
-	開発環境：CS+forCC V6.01.00
+	開発環境：CS+forCC V7.00.00
 	コンパイラ：CC-RX V2.08.00
 	CPUボード：TARGET BOARD for RX65N(RTK5RX65N0C00000BR)
 	CPU：R5F565NEDDFP
@@ -36,7 +36,6 @@
 void main(void);
 void vTask1(void *pvParameters);
 void vTask2(void *pvParameters);
-
 
 void main(void)
 {
